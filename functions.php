@@ -1,5 +1,5 @@
 <?php
-//phpinfo();die;
+
 function generateArray(): array
 {
 
@@ -103,16 +103,16 @@ function drawTree(array $array, int $sectionDivider = 1): void
 }
 
 
-//function countAmountOfWays(array $tree, int &$amount = 1)
-//{
-//    if (!isset($tree['nextLvl'])) {
-//        $amount++;
-//        return;
-//    }
-//    foreach ($tree['nextLvl'] as $branch) {
-//        countAmountOfWays($branch, $amount);
-//    }
-//}
+function countAmountOfWays(array $tree, int &$amount = 1)
+{
+   if (!isset($tree['nextLvl'])) {
+       $amount++;
+       return;
+   }
+   foreach ($tree['nextLvl'] as $branch) {
+       countAmountOfWays($branch, $amount);
+   }
+}
 
 function getBranches(array $tree, array &$res = null): void
 {
@@ -190,9 +190,5 @@ function viewLabirinth(array $array): void
 
 }
 
-
-////drawTree($tree);
-
-//drawTree($tree);
 
 
